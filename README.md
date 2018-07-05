@@ -1,5 +1,7 @@
 # blazegraph-notes
 
+![](https://raw.githubusercontent.com/rdmpage/blazegraph-notes/master/blazegraph_by_systap_favicon.png)
+
 Notes on working with Blazegraph.
 
 Blazegraph can be run in a Docker container locally on Kitematic, or in [sloppy.io](https://sloppy.io).
