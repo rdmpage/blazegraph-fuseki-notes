@@ -1,12 +1,15 @@
-# blazegraph-notes
+# Blazegraph and Fuseki notes
 
 ![](https://raw.githubusercontent.com/rdmpage/blazegraph-notes/master/blazegraph_by_systap_favicon.png)
+![](https://raw.githubusercontent.com/rdmpage/blazegraph-notes/master/quS6q6Yu.png)
 
-Notes on working with Blazegraph.
+Notes on working with Blazegraph and Fuseki.
 
-Blazegraph can be run in a Docker container locally on Kitematic, or in [sloppy.io](https://sloppy.io).
+Blazegraph and Fuseki can be run in a Docker container locally on Kitematic, or in [sloppy.io](https://sloppy.io).
 
 ## sloppy.io
+
+### Blazegraph
 
 The JSON file below has the settings to run Blazegraph, which is quite resource hungry. This JSON comes from the **Versions** tab on the project page.
 
@@ -47,6 +50,35 @@ The JSON file below has the settings to run Blazegraph, which is quite resource 
       "port_index": 0
     }
   ],
+  "dependencies": []
+}
+```
+
+### Fuseki
+
+```
+{
+  "id": "app",
+  "image": "stain/jena-fuseki",
+  "domain": {
+    "uri": "kg-fuseki.sloppy.zone"
+  },
+  "instances": 1,
+  "mem": 1600,
+  "port_mappings": [
+    {
+      "container_port": 3030,
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "container_path": "/fuseki",
+      "size": "8GB"
+    }
+  ],
+  "env": {},
+  "health_checks": [],
   "dependencies": []
 }
 ```
