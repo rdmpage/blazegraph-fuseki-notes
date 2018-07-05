@@ -1,7 +1,7 @@
 # Blazegraph and Fuseki notes
 
-![](https://raw.githubusercontent.com/rdmpage/blazegraph-notes/master/blazegraph_by_systap_favicon.png)
-![](https://raw.githubusercontent.com/rdmpage/blazegraph-notes/master/quS6q6Yu.png)
+<img src="https://raw.githubusercontent.com/rdmpage/blazegraph-fuseki-notes/master/blazegraph_by_systap_favicon.png" height="100">
+<img src="https://raw.githubusercontent.com/rdmpage/blazegraph-fuseki-notes/master/quS6q6Yu.png" height="100">
 
 Notes on working with Blazegraph and Fuseki.
 
