@@ -7,6 +7,16 @@ Notes on working with Blazegraph and Fuseki.
 
 Blazegraph and Fuseki can be run in a Docker container locally on Kitematic, or in [sloppy.io](https://sloppy.io).
 
+## Character encoding
+
+Need to be careful with character encoding in Blazegraph. For example, N-Triples are treated as US-ASCII, which means UTF-8 characters get managed. This follows the spec https://www.w3.org/TR/rdf-testcases/#ntrip_strings but caused me much grief. Mercifully N-Triples is a subset of n3, so setting ```Content-Type: text/rdf+n3``` enables triples to be uploaded with correct encoding. See also https://wiki.blazegraph.com/wiki/index.php/REST_API#RDF_data .
+
+For example, 
+```
+curl http://localhost:32779/blazegraph/sparql -H 'Content-Type: text/rdf+n3' --data-binary '@$triples_filename'
+```
+
+
 ## sloppy.io
 
 ### Blazegraph
