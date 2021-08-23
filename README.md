@@ -1,9 +1,10 @@
-# Blazegraph and Fuseki notes
+# Triple store notes: Blazegraph, Fuseki, and Oxigraph notes
 
 <img src="https://raw.githubusercontent.com/rdmpage/blazegraph-fuseki-notes/master/blazegraph_by_systap_favicon.png" height="100">
 <img src="https://raw.githubusercontent.com/rdmpage/blazegraph-fuseki-notes/master/quS6q6Yu.png" height="100">
+<img src="https://raw.githubusercontent.com/rdmpage/blazegraph-fuseki-notes/master/64649343" height="100">
 
-Notes on working with Blazegraph and Fuseki.
+Notes on working with Blazegraph, Fuseki, Oxigraph.
 
 Blazegraph and Fuseki can be run in a Docker container locally on Kitematic, or in [sloppy.io](https://sloppy.io).
 
@@ -91,6 +92,25 @@ The JSON file below has the settings to run Blazegraph, which is quite resource 
   "health_checks": [],
   "dependencies": []
 }
+```
+
+## DigitalOcean
+
+### 8 Gb droplet
+
+Get an DigitalOcean access token at https://cloud.digitalocean.com/account/api/tokens
+
+Create a droplet
+
+```
+docker-machine create --digitalocean-size "s-4vcpu-8gb" --driver digitalocean --digitalocean-access-token <your-token> <name-for-your-droplet>
+```
+eval $(docker-machine env name-for-your-droplet)
+
+#### Blazegraph
+
+```
+docker run -d -p 9999:9999 openkbs/blazegraph
 ```
 
 ## Sparql
