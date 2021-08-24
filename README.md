@@ -96,7 +96,9 @@ The JSON file below has the settings to run Blazegraph, which is quite resource 
 
 ## DigitalOcean
 
-### 8 Gb droplet
+If you don’t have docker-machine installed see https://docs.docker.com/machine/install-machine/
+
+### 8 Gb droplet (no longer works)
 
 Get an DigitalOcean access token at https://cloud.digitalocean.com/account/api/tokens
 
@@ -111,6 +113,16 @@ eval $(docker-machine env name-for-your-droplet)
 
 ```
 docker run -d -p 9999:9999 openkbs/blazegraph
+```
+
+#### Oxigraph
+
+Create a DigitalOcean droplet manually, open console, and then:
+
+```
+apt install docker.io
+
+docker run -d --init --rm -v $PWD/data:/data -p 7878:7878 oxigraph/oxigraph -b 0.0.0.0:7878 -f /data
 ```
 
 ## Sparql
